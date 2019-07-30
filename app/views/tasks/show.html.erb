@@ -4,6 +4,15 @@
 
 <p> <%= @task.details %> </p>
 
-<p>Is this task completed?</p>
+<%= form_for @task do |task| %>
+  <div class="form-group">
+	 <%= task.label "Is the task completed?" %>
+	 <%= task.check_box :completed, class: "form-control" %>
+  </div>
+
+  <%= task.submit "Update task", class: "btn btn-primary" %>
+<% end %>
+
 
 <p><%= link_to "Back to list", tasks_path %></p>
+<!-- , url: tasks_path, method: :patch  -->
