@@ -6,6 +6,7 @@
   	  <%= check_box_tag "complete", "task", task.completed %>
   	  Task: 
   	  <%= task.title %>
+  	  <%= link_to "View", show_path(task) %>
   	</li>
   <% end %>
 </ul>
