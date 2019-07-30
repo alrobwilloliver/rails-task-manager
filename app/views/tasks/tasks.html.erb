@@ -6,7 +6,12 @@
   	  <%= check_box_tag "complete", "task", task.completed %>
   	  Task: 
   	  <%= task.title %>
-  	  <%= link_to "View", show_path(task) %>
+  	  <%= link_to "View", task_path(task) %>
+  	  <%= link_to "Delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
   	</li>
   <% end %>
 </ul>
+
+<%= link_to "Create new task", new_task_path %>
